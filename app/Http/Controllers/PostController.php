@@ -34,7 +34,18 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validate data
+        
+        $this->validate($request, array(
+        
+            'title' => 'required|max:255',
+            'body'  => 'required'
+        
+        ));
+        
+        //store data in the database
+        
+        //redirect to another page
     }
 
     /**
