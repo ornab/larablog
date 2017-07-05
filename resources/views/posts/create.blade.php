@@ -3,6 +3,12 @@
 
 @section('title', '| Create Post')
 
+@section('styles')
+
+    {!! Html::style('css/parsley.css') !!}
+ 
+@endsection
+
 
 @section('content')
 
@@ -13,18 +19,18 @@
              <hr>
              
              
-             {!!Form::open(array('route' => 'posts.store'))!!}
+             {!!Form::open(array('route' => 'posts.store', 'data-parsley-validate' => ''))!!}
              
              <div class="form-group"> 
                    
                    {!! Form::label('title', 'Title:')!!}
-                   {!! Form::text('title', null, ['class'=> 'form-control'])!!}
+                   {!! Form::text('title', null, ['class'=> 'form-control', 'required'=>''])!!}
                    
                 </div>
              <div class="form-group"> 
                    
                    {!! Form::label('body', 'Body:')!!}
-                   {!! Form::textarea('body', null, ['class'=> 'form-control', 'rows'=> 4])!!}
+                   {!! Form::textarea('body', null, ['class'=> 'form-control','required'=> '', 'rows'=> 4])!!}
                    
                 </div>
                 
@@ -39,4 +45,11 @@
          </div>
      </div>
 
+@endsection
+
+
+@section('scripts')
+
+   {!! Html::script('js/parsley.min.js') !!}
+  
 @endsection
