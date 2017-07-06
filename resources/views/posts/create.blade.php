@@ -19,7 +19,7 @@
              <hr>
              
              
-             {!!Form::open(array('route' => 'posts.store', 'data-parsley-validate' => ''))!!}
+             {!!Form::open(array('route' => 'posts.store', 'data-parsley-validate'=> ''))!!}
              
              <div class="form-group"> 
                    
@@ -30,7 +30,7 @@
              <div class="form-group"> 
                    
                    {!! Form::label('body', 'Body:')!!}
-                   {!! Form::textarea('body', null, ['class'=> 'form-control','required'=> '', 'rows'=> 4])!!}
+                   {!! Form::textarea('body', null, ['class'=> 'form-control', 'rows'=> 4, 'required'=>''])!!}
                    
                 </div>
                 
@@ -41,6 +41,10 @@
                 </div>
              
              {!! Form::close() !!}
+             
+             
+             
+             @include('includes.form_error')
              
          </div>
      </div>
